@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7bb075a920.js" crossorigin="anonymous"></script>
+    <title>Pages</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /*navigation*/
+        header a {
+            text-decoration: none;
+        }
+
+        header {
+            padding: 0 70px;
+            background-color: #1d1f1d;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #brand {
+            font-weight: bold;
+            font-size: 25px;
+            display: flex;
+            border: 0px solid white;
+            align-items: center;
+        }
+
+        #brand a {
+            color: #f9f9f9;
+        }
+
+        ul {
+            list-style: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        ul a {
+            color: grey;
+        }
+
+        ul li {
+            padding: 5px;
+            margin-left: 50px;
+
+        }
+
+        ul li:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            background-color: red;
+            border-radius: 10px;
+
+        }
+
+        /*
+      #login,
+      #signup {
+        border-radius: 5px;
+        padding: 5px 8px;
+      }
+      
+      #login {
+        border: 1px solid #498afb;
+      }
+      
+      #signup {
+        border: 1px solid #ff3860;
+      }
+      
+      #signup a {
+        color: #ff3860;
+      }
+      
+      #login a {
+        color: #498afb;
+      }
+      */
+        #hamburger-icon {
+            margin: auto 0;
+            display: none;
+            cursor: pointer;
+        }
+
+        #hamburger-icon div {
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .open .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .open .bar2 {
+            opacity: 0;
+        }
+
+        .open .bar3 {
+            -webkit-transform: rotate(45deg) translate(-6px, -8px);
+            transform: rotate(45deg) translate(-6px, -8px);
+        }
+
+        .open .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            justify-content: flex-start;
+            height: max-content;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: calc(100vh - 50px);
+            width: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .body {
+                overflow: hidden;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            #hamburger-icon {
+                display: block;
+            }
+
+
+            #choose-us {
+                background-color: #fbfbfb;
+                height: 880px;
+            }
+
+            .choose-us {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0px;
+            }
+
+            .choose-us .c-detail {
+                margin-top: -50px;
+                margin-left: -10px;
+            }
+
+            .choose-us .c-detail p {
+                width: 242px;
+            }
+
+            .choose-us .c-detail .head1 {
+                font-size: 20px;
+                width: 330px;
+                text-align: center;
+
+            }
+
+            .choose-us #c-img {
+                border: 0px solid brown;
+            }
+
+            .choose-us #c-img img {
+                height: 370px;
+                margin-top: 30px;
+                margin-left: 40px;
+                text-align: center;
+                border: 0px solid red;
+                width: 300px;
+                border-radius: 50%;
+            }
+
+            .choose-us .c-detail .tic {
+                border: 0px solid violet;
+                width: 300px;
+            }
+
+            /*case study*/
+
+            #case-study h1 {
+                position: relative;
+                font-size: 20px;
+                top: 150px;
+
+            }
+
+            #case-study .case-study-btn {
+                margin-left: -30px;
+            }
+
+            .case-study {
+                margin-bottom: 0px;
+
+            }
+
+            #case-study {
+                background-color: #7F8487;
+                height: 1680px;
+            }
+
+            .cs-card {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            #case-study .cs-card .card-one {
+                width: 300px;
+            }
+
+            #case-study .cs-card .card-two {
+                width: 300px;
+            }
+
+            #case-study .cs-card .card-three {
+                width: 300px;
+            }
+
+            /*questions*/
+
+            .question button {
+                margin-left: -50px;
+            }
+
+            #question h1 {
+                font-size: 20px;
+            }
+
+            .question {
+                margin-bottom: 10px;
+            }
+
+            /*our team*/
+
+
+
+            #our-team {
+                background-color: #7F8487;
+                height: 1900px;
+            }
+
+            .our-team .team-detail {
+                padding-top: 30px;
+                width: 350px;
+                margin-left: 15px;
+                border: 0px solid red;
+            }
+
+            .our-team .team-detail h1 {
+                font-size: 20px;
+                width: 350px;
+            }
+
+            .our-team .team-detail .read-btn {
+                padding: 7px;
+            }
+
+            #our-team .team-right-side {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0px;
+                top: 330px;
+            }
+
+            #our-team .team-right-side .card {
+                width: 300px;
+                height: 350px;
+                margin-left: 40px;
+            }
+
+            #our-team .team-right-side .card .icon {
+                position: relative;
+                left: -70px;
+                top: -250px;
+                display: flex;
+                width: max-content;
+                flex-direction: column;
+            }
+
+            #our-team .team-right-side .card .icon i {
+                margin-bottom: 10px;
+            }
+
+            /*footer1*/
+
+            #footer1 h1 {
+                font-size: 27px;
+            }
+
+            #footer1 input {
+                width: 300px;
+            }
+
+            #case-study .cs-card .card-one .round i {
+                position: relative;
+                top: -20px;
+            }
+
+            #case-study .cs-card .card-two .round i {
+                position: relative;
+                top: -20px;
+            }
+
+
+        }
+
+
+        /*choose us*/
+
+        .choose-us {
+            width: 100%;
+            height: 700px;
+            background-color: #fbfbfb;
+        }
+
+        /*choose left side*/
+
+        .choose-us .c-detail {
+            margin-left: 40px;
+            padding-top: 80px;
+            width: 50%;
+            height: 500px;
+        }
+
+        .choose-us .c-detail h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .c-detail .choose-btn {
+            padding: 8px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+        }
+
+        .c-detail p {
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+
+        .c-detail .tic i {
+            height: 25px;
+            width: 25px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 20px;
+        }
+
+        .c-detail .tic {
+            display: flex;
+        }
+
+        /*rigth img*/
+
+        .choose-us .c-img img {
+            height: 500px;
+            margin-top: 100px;
+            margin-left: 80px;
+            width: 400px;
+            border-radius: 30%;
+        }
+
+        .choose-us {
+            display: flex;
+        }
+
+        /* image showing option while scrolling*/
+
+        .choose-us .c-img {
+            opacity: 0;
+            padding-top: 0px;
+            transform: translateY(300px);
+            transition: opacity 3s, transform 0.9s;
+        }
+
+        .choose-us .c-img.show {
+            opacity: 1;
+            transform: translateY(0);
+            transform: 5s;
+        }
+
+        /*case study*/
+
+        .case-study {
+            height: 800px;
+            width: 100%;
+            background-color: #7F8487;
+        }
+
+        .case-study .case-study-btn {
+            padding: 8px;
+            border-radius: 20px;
+            position: absolute;
+            left: 46%;
+            margin-top: 100px;
+        }
+
+        .case-study h1 {
+            position: relative;
+            top: 18%;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        /*cas study cards*/
+        .case-study .cs-card {
+            display: flex;
+            gap: 20px;
+            width: 90%;
+            padding-top: 200px;
+            border: 0px solid red;
+            margin: auto;
+        }
+
+        .case-study .cs-card .card-one {
+            height: 450px;
+            width: 400px;
+            border-radius: 20px;
+            background-color: blueviolet;
+            margin: auto;
+        }
+
+        .case-study .cs-card .card-two {
+            height: 450px;
+            width: 400px;
+            border-radius: 20px;
+            background-color: blueviolet;
+            margin: auto;
+        }
+
+        .case-study .cs-card .card-three {
+            height: 450px;
+            width: 400px;
+            border-radius: 20px;
+            background-color: blueviolet;
+            margin: auto;
+        }
+
+        /* each card inner details */
+
+        .case-study .card-one {
+            background-image: url('https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXB1dGVyJTIwa2V5Ym9hcmR8ZW58MHx8MHx8fDA%3D');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .case-study .card-two {
+            background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8fDA%3D');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-left: 20px;
+        }
+
+        .case-study .card-three {
+            background-image: url('https://media.istockphoto.com/id/1818926612/photo/digital-brain-artificial-intelligence-virtual-cpu-concept.webp?b=1&s=170667a&w=0&k=20&c=WDA3v1LkC_two15LFinS5M0H4GxDl8T37B8kEKE8jNk=');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-left: 20px;
+        }
+
+        .case-study .cs-card .head-btn {
+            margin-top: 250px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            padding: 8px;
+            background: transparent;
+            border: 1px solid white;
+            color: rgb(255, 255, 255);
+        }
+
+        .case-study .cs-card h2 {
+            color: white;
+            margin-bottom: 0px;
+        }
+
+        .case-study .cs-card .round {
+            font-size: 20px;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            line-height: 35px;
+            position: relative;
+            top: 20px;
+            border: none;
+            background-color: transparent;
+            color: white;
+        }
+
+        .case-study .cs-card .round i:hover {
+            cursor: pointer;
+        }
+
+        /*questions*/
+
+        .question {
+            height: 630px;
+            width: 100%;
+            background-color: #fbfbfb;
+            border: 0px solid red;
+        }
+
+        .question button {
+            position: relative;
+            left: 47%;
+            top: 10%;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .question h1 {
+            position: relative;
+            top: 12%;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        /*left questions*/
+
+        .question .question-box .left-questions {
+            width: 45%;
+            border: 0px solid black;
+            position: relative;
+            top: 110px;
+            margin: auto;
+        }
+
+        .question-box .left-questions .ques {
+            background-color: #e0d2d2;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 2s;
+        }
+
+        .answer {
+            display: none;
+            padding: 10px;
+        }
+
+        .question .question-box .right-questions {
+            width: 45%;
+            border: 0px solid black;
+            position: relative;
+            top: 110px;
+            margin: auto;
+        }
+
+        .question-box .right-questions .ques {
+            background-color: #e0d2d2;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .question-box {
+            display: flex;
+        }
+
+        .question {
+            opacity: 0;
+            padding-top: 0px;
+            transform: translateY(300px);
+            transition: opacity 3s, transform 0.9s;
+        }
+
+        .question.show {
+            opacity: 1;
+            transform: translateY(0);
+            transform: 5s;
+        }
+
+
+
+        @keyframes bounce {
+
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0)
+            }
+
+            40% {
+                -webkit-transform: translateY(-40px);
+                -ms-transform: translateY(-40px);
+                transform: translateY(-40px)
+            }
+
+            60% {
+                -webkit-transform: translateY(-15px);
+                -ms-transform: translateY(-15px);
+                transform: translateY(-15px)
+            }
+        }
+
+        .footer1 {
+            background-image: url('https://img.freepik.com/premium-photo/robot-hand-hold-white-box_1174648-143.jpg?w=1060');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 420px;
+            width: 100%;
+
+        }
+
+        .footer1 .f-detail {
+            border: 0px solid red;
+            width: max-content;
+            padding-top: 100px;
+            margin-left: 20px;
+
+        }
+
+        .footer1 .f-detail button {
+            padding: 12px;
+            border-radius: 20px;
+            width: max-content;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .f-detail h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .f-detail input {
+            padding: 10px;
+            width: 500px;
+            border-radius: 30px;
+            border: none;
+            margin-bottom: 15px;
+            height: 50px;
+            font-size: 18px;
+        }
+
+        .f-detail i {
+            font-size: 25px;
+            margin-left: -40px;
+            line-height: 50px;
+            height: 60px;
+            position: relative;
+        }
+
+        .f-detail h3 {
+            font-weight: 100;
+            margin-left: 10px;
+        }
+    </style>
+
+    <header>
+        <div id="brand"><a href="/">AI.TECH</a></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--  <li id="login"><a href="/logi
+                      <li><a href="/about">About</a></li>n" >Login</a></li>
+          <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--   <li id="login"><a href="/login" >Login</a></li>
+          <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </div>
+    </header>
+
+
+    <!--choose us-->
+    <div class="choose-us" id="choose-us">
+        <div class="c-detail">
+            <button class="choose-btn">Why Choose Us</button>
+            <h1 class="head1">We're Best in AI Industry with 10 Years of Experience</h1>
+            <p>We are industry leaders in AI with a decade of unparalleled expertise and innovation. Leading the AI
+                industry with a decade of groundbreaking innovations and technological advancements</p>
+            <div class="tic">
+                <i class="fa-solid fa-check"></i>
+                <p>Pioneering advancements</p>
+            </div>
+            <div class="tic">
+                <i class="fa-solid fa-check"></i>
+                <p>Proven track record</p>
+            </div>
+            <div class="tic">
+                <i class="fa-solid fa-check"></i>
+                <p>Expertise-driven solutions</p>
+            </div>
+        </div>
+        <div class="c-img" id="c-img">
+            <img src="https://img.freepik.com/premium-photo/white-futuristic-cartoon-toy-robot-white-background-3d-rendering_476612-15065.jpg?size=626&ext=jpg&ga=GA1.1.351478974.1703420878&semt=ais"
+                alt="img1">
+        </div>
+
+    </div>
+    <!--case study-->
+    <div class="case-study" id="case-study">
+        <button class="case-study-btn">Case Study</button>
+        <h1>Explore Our Recent AI<br> Case Studies</h1>
+        <div class="cs-card">
+            <div class="card-one">
+                <button class="head-btn">Robotic Automation</button>
+                <h2>Automating tasks through robotics for efficiency and precision</h2>
+                <button class="round"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="card-two">
+                <button class="head-btn">Machine Learning</button>
+                <h2>Harnessing data to enable intelligent decision-making and predictions</h2>
+                <button class="round"><i class="fa-solid fa-arrow-right"></i></button>
+
+            </div>
+            <div class="card-three">
+                <button class="head-btn">Predictive Analysis</button>
+                <h2>Analyzing data to anticipate future outcomes and trends</h2>
+                <button class="round"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <!--question part section-->
+    <div class="question" id="question">
+        <button>Popular FAQs</button>
+        <h1>Frequently Asked <br>Questions</h1>
+        <div class="question-box">
+            <div class="left-questions">
+                <div class="ques" onclick="toggleAnswer('answer1')">How to build a website?</div>
+                <div id="answer1" class="answer">
+                    Using the HTML, CSS and javascript we will mostly cover our website
+                </div>
+                <div class="ques" onclick="toggleAnswer('answer2')">How long it will take to get a new website?
+                </div>
+                <div id="answer2" class="answer">
+                    Depending upon the need of the customers we will detect the time period to finish the design
+                </div>
+                <div class="ques" onclick="toggleAnswer('answer3')">Do you creat only HTML website?</div>
+                <div id="answer3" class="answer">
+                    It is not like that with the help of HTML,CSS & JS we will creat your website for better
+                    attraction and features
+                </div>
+                <div class="ques" onclick="toggleAnswer('answer4')">Will my website will be mobile-friendly?
+                </div>
+                <div id="answer4" class="answer">
+                    Of course, we will make your website that will be suitable for mobile, laptops, pc's & also for
+                    tablets
+                </div>
+            </div>
+            <div class="right-questions">
+                <div class="ques" onclick="toggleAnswer('answer5')">How to build a website?</div>
+                <div id="answer5" class="answer">
+                    Using the HTML, CSS and javascript we will mostly cover our website
+                </div>
+                <div class="ques" onclick="toggleAnswer('answer6')">How long it will take to get a new website?
+                </div>
+                <div id="answer6" class="answer">
+                    Depending upon the need of the customers we will detect the time period to finish the design
+                </div>
+                <div class="ques" onclick="toggleAnswer('answer7')">Do you creat only HTML website?</div>
+                <div id="answer7" class="answer">
+                    It is not like that with the help of HTML,CSS & JS we will creat your website for better
+                    attraction and features
+                </div>
+                <div class="ques" onclick="toggleAnswer('answer8')">Will my website will be mobile-friendly?
+                </div>
+                <div id="answer8" class="answer">
+                    Of course, we will make your website that will be suitable for mobile, laptops, pc's & also for
+                    tablets
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer1-->
+    <div class="footer1" id="footer1">
+        <div class="f-detail">
+            <button>Newsletter</button>
+            <h1>Let's subscribe the newsletter</h1>
+            <input type="email" placeholder="Enter Your Mail">
+            <i class="fa-brands fa-telegram"></i>
+            <h3>We will contact you shortly..</h3>
+        </div>
+    </div>
+
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var animationSection = document.querySelector('.c-img');
+            var sectionPosition = animationSection.getBoundingClientRect().top;
+            var screenPosition = window.innerHeight;
+            if (sectionPosition < screenPosition) {
+                animationSection.classList.add('show');
+            }
+        });
+
+        window.addEventListener('scroll', function () {
+            var animationSection = document.querySelector('.question');
+            var sectionPosition = animationSection.getBoundingClientRect().top;
+            var screenPosition = window.innerHeight;
+            if (sectionPosition < screenPosition) {
+                animationSection.classList.add('show');
+            }
+        });
+
+        //question show js
+
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            var questions = document.getElementsByClassName('ques');
+            var answers = document.getElementsByClassName('answer');
+
+            // Close all answers and reset background color
+            for (var i = 0; i < answers.length; i++) {
+                answers[i].style.display = 'none';
+                questions[i].style.backgroundColor = 'green'; // Reset background color
+            }
+
+            // Open the clicked answer and change background color of the clicked question
+            answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+            var questionIndex = Array.from(answers).indexOf(answer);
+            questions[questionIndex].style.backgroundColor = 'red'; // Change background color of clicked question
+        }
+
+          //navbar for moblie and lap navgition bar
+  function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+    </script>
+</body>
+
+</html>

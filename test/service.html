@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="c:\Users\WELCOME\Downloads\location-dot-solid.svg">
+    <script src="https://kit.fontawesome.com/7bb075a920.js" crossorigin="anonymous"></script>
+    <title>Services</title>
+</head>
+
+<body>
+    <style>
+       
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+         /*navigation*/
+
+        header a {
+            text-decoration: none;
+        }
+
+        header {
+            padding: 0 70px;
+            background-color: #1d1f1d;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #brand {
+            font-weight: bold;
+            font-size: 25px;
+            display: flex;
+            border: 0px solid white;
+            align-items: center;
+        }
+
+        #brand a {
+            color: #f9f9f9;
+        }
+
+        ul {
+            list-style: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        ul a {
+            color: grey;
+        }
+
+        ul li {
+            padding: 5px;
+            margin-left: 50px;
+        }
+
+        ul li:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            background-color: red;
+            border-radius: 10px;
+        }
+
+        #hamburger-icon {
+            margin: auto 0;
+            display: none;
+            cursor: pointer;
+        }
+
+        #hamburger-icon div {
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .open .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .open .bar2 {
+            opacity: 0;
+        }
+
+        .open .bar3 {
+            -webkit-transform: rotate(45deg) translate(-6px, -8px);
+            transform: rotate(45deg) translate(-6px, -8px);
+        }
+
+        .open .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            justify-content: flex-start;
+            height: max-content;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: calc(100vh - 50px);
+            width: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .body {
+                overflow: hidden;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            #hamburger-icon {
+                display: block;
+            }
+
+            .service {
+                /* background-color: rgb(223, 241, 254);*/
+                width: 100%;
+                padding-top: 100px;
+                position: relative;
+                margin-bottom: 0px;
+            }
+
+            #SERVICES {
+                background-color: #7F8487;
+                height: 1920px;
+            }
+
+            .service .service-detail {
+                margin-top: -80px;
+                margin-left: 20px
+            }
+
+            .service .service-detail h1 {
+                font-size: 20px;
+                width: 350px;
+                border: 0px solid red;
+                text-align: center;
+            }
+
+            .service .service-detail p {
+                width: 350px;
+                font-size: 15px;
+            }
+
+            .service .service-detail .read-btn {
+                padding: 7px;
+                width: max-content;
+            }
+
+            .service .service-card {
+                position: relative;
+                top: -25px;
+                left: -20px;
+                border: none;
+            }
+
+            .service .service-card .row1 {
+                display: flex;
+                flex-direction: column;
+                margin-left: 17%;
+            }
+
+            .service .service-card .row2 {
+                display: flex;
+                flex-direction: column;
+                margin-left: 17%;
+            }
+
+        }
+
+        /*non responsive*/
+        
+        .service {
+            background-color: #7F8487;
+            width: 100%;
+            height: 950px;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .service-detail {
+            width: 38%;
+            height: 400px;
+            margin-left: 50px;
+            margin-top: 130px;
+        }
+
+        .service-detail button {
+            height: auto;
+            width: auto;
+            border-radius: 25px;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: blue;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .service-detail h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .service .service-detail p {
+            line-height: 23px;
+            margin-bottom: 20px;
+        }
+
+        .service-detail .read-btn {
+            background-color: rgba(43, 43, 252, 0.66);
+            border: none;
+            padding: 15px;
+            color: white;
+            width: 130px;
+            font-size: 18px;
+            -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+        }
+
+        /*service right side*/
+
+        .service-card {
+            position: relative;
+            top: -500px;
+            left: 48%;
+            border: 0px solid red;
+            width: max-content;
+        }
+
+        /*   .service-card {
+            opacity: 0;
+            padding-top: 0px;
+            transform: translateY(300px);
+            transition: opacity 3s, transform 0.9s;
+        }
+
+        .service-card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transform: 5s;
+        }*/
+
+        .service-card .row1 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .service-card .row1 .card {
+            width: 310px;
+            height: 360px;
+            background-color: rgb(130, 196, 240);
+            border-radius: 15px;
+        }
+
+        .service-card .row2 {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .service-card .row2 .card1 {
+            width: 310px;
+            height: 360px;
+            background-color: rgb(130, 196, 240);
+            border-radius: 15px;
+        }
+
+        /*card inner details */
+
+        .row1 .card i {
+            color: blue;
+            font-size: 35px;
+            height: 70px;
+            width: 70px;
+            background-color: black;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 50%;
+            margin-left: 120px;
+            margin-top: 50px;
+        }
+
+        .row1 .card h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .row1 .card p {
+            padding: 25px;
+        }
+
+        .card .readmore-btn h6 {
+            font-size: 15px;
+            font-weight: normal;
+            padding: 10px;
+        }
+
+        .card .readmore-btn h6 {
+            background-color: rgb(11, 11, 11);
+            border-radius: 20px;
+            color: rgb(251, 251, 251);
+        }
+
+        .card .readmore-btn {
+            border: none;
+            background-color: rgb(255, 255, 255);
+            margin-left: 100px;
+            border-radius: 20px;
+        }
+
+        /*card hover details*/
+
+        .card:hover .readmore-btn h6 {
+            position: relative;
+            background-color: white;
+            color: black;
+        }
+
+        .row1 .card:hover {
+            background-color: aliceblue;
+            transition: 1s;
+
+        }
+
+        .row1 .card:hover i {
+            background-color: wheat;
+        }
+
+        .row1 .card:hover h2 {
+            color: rgb(0, 0, 0);
+            transition: 1s linear;
+        }
+
+        .row1 .card:hover p {
+            color: rgb(0, 0, 0);
+            transition: 1s linear;
+        }
+
+        .card:hover .readmore-btn {
+            animation: mymove 2s forwards;
+            border-radius: 20px;
+        }
+
+
+        .row2 .card1 i {
+            color: blue;
+            font-size: 35px;
+            height: 70px;
+            width: 70px;
+            background-color: black;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 50%;
+            margin-left: 120px;
+            margin-top: 50px;
+        }
+
+        .row2 .card1 h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .row2 .card1 p {
+            padding: 25px;
+        }
+
+        .card1 .readmore-btn h6 {
+            background-color: black;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .card1 .readmore-btn h6 {
+            font-size: 15px;
+            font-weight: normal;
+            padding: 10px;
+        }
+
+        .card1 .readmore-btn {
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+            margin-left: 100px;
+        }
+
+        /*card hover details*/
+
+        .card1:hover .readmore-btn h6 {
+            position: relative;
+            background-color: white;
+            color: black;
+        }
+
+        .row2 .card1:hover {
+            background-color: aliceblue;
+            transition: 1s;
+        }
+
+        .row2 .card1:hover i {
+            background-color: wheat;
+        }
+
+        .row2 .card1:hover p {
+            color: rgb(0, 0, 0);
+            transition: 1s linear;
+        }
+
+        .card1:hover .readmore-btn {
+            animation: mymove 2s forwards;
+            border-radius: 20px;
+        }
+    </style>
+
+    <!--navbar-->
+    <header>
+        <div id="brand"><a href="/">AI.TECH</a></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--  <li id="login"><a href="/logi
+                      <li><a href="/about">About</a></li>n" >Login</a></li>
+          <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--   <li id="login"><a href="/login" >Login</a></li>
+          <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </div>
+    </header>
+    <!--Services-->
+    <div class="service" id="SERVICES">
+        <div class="service-detail">
+            <button class="ser-btn">Our Services</button>
+            <h1>Our Excellent AI Solutions for Your Business</h1>
+            <p>Streamline operations and boost efficiency with our cutting-edge AI solutions tailored to your
+                business needs.
+                Harness the power of advanced algorithms and machine learning to drive innovation and stay ahead in
+                today's competitive landscape</p>
+            <button class="read-btn">Read More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="row1">
+                <div class="card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h2>Robotic Automation</h2>
+                    <p>Robotic animation blends mechanical precision with digital artistry to bring machines to life
+                        through movement and expression.</p>
+                    <button class="readmore-btn">
+                        <h6>Read More</h6>
+                    </button>
+
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2>Education & Science</h2>
+                    <p>Research and science in AI drive the relentless pursuit of understanding, innovation, and
+                        ethical advancement in artificial intelligence technologies.</p>
+                    <button class="readmore-btn">
+                        <h6>Read More</h6>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div class="card1">
+                    <i class="fa-solid fa-power-off"></i>
+                    <h2>Machine learning</h2>
+                    <p>
+                        Machine learning involves algorithms enabling computers to learn from data, identify
+                        patterns, and make predictions, driving innovation across various industries.</p>
+                    <button class="readmore-btn" id="readmore-btn">
+                        <h6>Read More</h6>
+                    </button>
+
+                </div>
+                <div class="card1">
+                    <i class="fa-solid fa-brain"></i>
+                    <h2>Predictive Analysis</h2>
+                    <p> Predictive analysis utilizes data to forecast future outcomes, informing decision-making and
+                        strategy across industries effectively.</p>
+                    <button class="readmore-btn">
+                        <h6>Read More</h6>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+          //navbar for moblie and lap navgition bar
+  function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About_page</title>
+
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /*navigation bar*/
+
+        header a {
+            text-decoration: none;
+        }
+
+        header {
+            padding: 0 70px;
+            background-color: #1d1f1d;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #brand {
+            font-weight: bold;
+            font-size: 25px;
+            display: flex;
+            border: 0px solid white;
+            align-items: center;
+        }
+
+        #brand a {
+            color: #f9f9f9;
+        }
+
+        ul {
+            list-style: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        ul a {
+            color: grey;
+        }
+
+        ul li {
+            padding: 5px;
+            margin-left: 50px;
+
+        }
+
+        ul li:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            background-color: red;
+            border-radius: 10px;
+
+        }
+
+        /*
+  #login,
+  #signup {
+    border-radius: 5px;
+    padding: 5px 8px;
+  }
+  
+  #login {
+    border: 1px solid #498afb;
+  }
+  
+  #signup {
+    border: 1px solid #ff3860;
+  }
+  
+  #signup a {
+    color: #ff3860;
+  }
+  
+  #login a {
+    color: #498afb;
+  }
+  */
+        #hamburger-icon {
+            margin: auto 0;
+            display: none;
+            cursor: pointer;
+        }
+
+        #hamburger-icon div {
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .open .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .open .bar2 {
+            opacity: 0;
+        }
+
+        .open .bar3 {
+            -webkit-transform: rotate(45deg) translate(-6px, -8px);
+            transform: rotate(45deg) translate(-6px, -8px);
+        }
+
+        .open .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            justify-content: flex-start;
+            height: max-content;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: calc(100vh - 50px);
+            width: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .body {
+                overflow: hidden;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            #hamburger-icon {
+                display: block;
+            }
+
+          }  /*about section*/
+
+            @media only screen and (max-width: 600px) {
+                .about .animation-container .animation-section img {
+                    height: 300px;
+                    width: 320px;
+                    margin-left: 37px;
+                    text-align: center;
+                    border: none;
+                    margin-bottom: -100px;
+
+                }
+
+                .about {
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    margin-bottom: 230px;
+                }
+
+                .about-details {
+                    width: 400px;
+                }
+
+                .about .about-details .abtus-btn {
+                    margin-top: -400px;
+                }
+
+                .about-details h1 {
+                    width: 315px;
+                    font-size: 20px;
+                }
+
+                .about .about-details p {
+                    width: 350px;
+                    font-size: 15px;
+                }
+
+
+                .p1 {
+                    position: relative;
+                    left: -4px;
+                    width: 350px;
+
+                }
+
+                .p1 p {
+                    width: 250px;
+                    border: 0px solid red;
+                }
+
+                .p2 {
+                    position: relative;
+                    left: -115px;
+                    padding-left: 50px;
+                    display: block;
+                    width: 350px;
+                }
+
+                .p {
+                    width: 100px;
+                    position: relative;
+                }
+
+                .about .about-details .points .p1 .p {
+                    display: flex;
+                    width: 50%;
+                    position: relative;
+
+                }
+
+                .about .about-details .points .p2 {
+                    display: none;
+                }
+
+                .about .icons {
+                    width: 300px;
+                    border: 0px solid red;
+                    margin-top: 20px;
+                }
+
+                .about .icons .r-btn {
+                    padding: 8px;
+                    font-size: 15px;
+                }
+
+                .about .icons i {
+                    height: 30px;
+                    width: 30px;
+                    line-height: 30px;
+                    margin-left: 12px;
+                }
+
+
+
+            }
+
+
+
+            .about {
+                margin-top: 10px;
+                height: 700px;
+                display: flex;
+                background-color: #fbfbfb;
+            }
+
+            .about .about-details {
+                height: 500px;
+                width: 50%;
+                margin-top: 70px;
+                margin-left: 5%;
+            }
+
+            .about-details .abtus-btn {
+                padding: 9px;
+                border-radius: 35px;
+                height: auto;
+                width: max-content;
+                border: 1px solid grey;
+                background-color: white;
+                color: rgba(43, 43, 252, 0.66);
+                cursor: pointer;
+            }
+
+            .about-details h1 {
+                margin-top: 20px;
+            }
+
+            .about-details p {
+                margin-top: 20px;
+                line-height: 24px;
+                font-size: 20px;
+            }
+
+            .about .about-details .abtus-btn p {
+                color: white;
+            }
+
+            /*points*/
+
+            .points {
+                margin-top: 20px;
+            }
+
+            .about-details .points .p1 .p {
+                display: flex;
+                margin-left: 5px;
+            }
+
+            .about-details .points .p1 i {
+                margin-right: 10px;
+                margin-top: 22px;
+            }
+
+            .about-details .points {
+                display: flex;
+            }
+
+            .about-details .points .p2 .p {
+                display: flex;
+                margin-left: 80px;
+
+            }
+
+            .about-details .points .p2 i {
+                margin-right: 10px;
+                margin-top: 22px;
+            }
+
+            /*icons*/
+            .icons {
+                margin-top: 50px;
+            }
+
+            .icons .r-btn {
+                height: auto;
+                width: auto;
+                border-radius: 30px;
+                background-color: rgba(43, 43, 252, 0.66);
+                padding: 10px;
+                color: white;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .icons i {
+                height: 40px;
+                width: 40px;
+                background-color: rgb(236, 236, 236);
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                margin-left: 14px;
+                border: 1.1px solid rgba(43, 43, 252, 0.66);
+                cursor: pointer;
+            }
+
+            .icons i:hover {
+                color: rgb(255, 255, 255);
+                background-color: rgb(13, 13, 13);
+                transition: .5s;
+            }
+
+            .about-details {
+                padding-top: 50px;
+            }
+    </style>
+
+    
+    <!--navigation bar-->
+    <header>
+        <div id="brand"><a href="/">AI.TECH</a></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--  <li id="login"><a href="/logi
+                      <li><a href="/about">About</a></li>n" >Login</a></li>
+          <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--   <li id="login"><a href="/login" >Login</a></li>
+          <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </div>
+    </header>
+
+    <!--about section-->
+    <div class="about" id="ABOUT">
+        <div class="animation-container">
+            <div class="animation-section">
+                <img src="https://img.freepik.com/free-photo/robot-building-snowman_1048-4268.jpg?size=626&ext=jpg&ga=GA1.1.351478974.1703420878&semt=ais"
+                    alt="Animation">
+            </div>
+        </div>
+        <div class="about-details">
+            <button class="abtus-btn">About US</button>
+            <h1>We Make Your Business Smarter with Artificial Intelligence</h1>
+            <p>
+                AI in business enhances efficiency through automation, streamlining operations, and data analysis,
+                leading to informed decision-making. It optimizes processes, minimizes errors, and scales
+                operations, reducing costs and increasing productivity. </p>
+            <p>AI in business automates tasks, analyzes data, and personalizes experiences, enhancing efficiency and
+                decision-making to drive growth and competitiveness</p>
+            <div class="points">
+                <div class="p1">
+                    <div class="p">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Award Winning</p>
+                    </div>
+                    <div class="p">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Professional Staff</p>
+                    </div>
+                </div>
+                <div class="p2">
+                    <div class="p">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Award Winning</p>
+                    </div>
+                    <div class="p">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Professional Staff</p>
+                    </div>
+                </div>
+            </div>
+            <div class="icons">
+                <button class="r-btn">Read More</button>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+          //navbar for moblie and lap navgition bar
+  function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+    </script>
+
+</body>
+
+</html>

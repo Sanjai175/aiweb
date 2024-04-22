@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="https://kit.fontawesome.com/7bb075a920.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <style>
+        /*navigation*/
+        header a {
+            text-decoration: none;
+        }
+
+        header {
+            padding: 0 70px;
+            background-color: #1d1f1d;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #brand {
+            font-weight: bold;
+            font-size: 25px;
+            display: flex;
+            border: 0px solid white;
+            align-items: center;
+        }
+
+        #brand a {
+            color: #f9f9f9;
+        }
+
+        ul {
+            list-style: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        ul a {
+            color: grey;
+        }
+
+        ul li {
+            padding: 5px;
+            margin-left: 50px;
+
+        }
+
+        ul li:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            background-color: red;
+            border-radius: 10px;
+
+        }
+
+        /*
+  #login,
+  #signup {
+    border-radius: 5px;
+    padding: 5px 8px;
+  }
+  
+  #login {
+    border: 1px solid #498afb;
+  }
+  
+  #signup {
+    border: 1px solid #ff3860;
+  }
+  
+  #signup a {
+    color: #ff3860;
+  }
+  
+  #login a {
+    color: #498afb;
+  }
+  */
+        #hamburger-icon {
+            margin: auto 0;
+            display: none;
+            cursor: pointer;
+        }
+
+        #hamburger-icon div {
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .open .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .open .bar2 {
+            opacity: 0;
+        }
+
+        .open .bar3 {
+            -webkit-transform: rotate(45deg) translate(-6px, -8px);
+            transform: rotate(45deg) translate(-6px, -8px);
+        }
+
+        .open .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            justify-content: flex-start;
+            height: max-content;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: calc(100vh - 50px);
+            width: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .body {
+                overflow: hidden;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            #hamburger-icon {
+                display: block;
+            }
+        }
+
+
+        @media only screen and (max-width: 600px) {
+
+            #our-team {
+                background-color: #7F8487;
+                height: 1900px;
+            }
+
+            .our-team .team-detail {
+                padding-top: 30px;
+                width: 350px;
+                margin-left: 15px;
+                border: 0px solid red;
+            }
+
+            .our-team .team-detail h1 {
+                font-size: 20px;
+                width: 350px;
+            }
+
+            .our-team .team-detail .read-btn {
+                padding: 7px;
+            }
+
+            #our-team .team-right-side {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0px;
+                top: 330px;
+            }
+
+            #our-team .team-right-side .card {
+                width: 300px;
+                height: 350px;
+                margin-left: 40px;
+            }
+
+            #our-team .team-right-side .card .icon {
+                position: relative;
+                left: -70px;
+                top: -250px;
+                display: flex;
+                width: max-content;
+                flex-direction: column;
+            }
+
+            #our-team .team-right-side .card .icon i {
+                margin-bottom: 10px;
+            }
+
+            /*footer2*/
+            #container1 {
+                width: 100%;
+                /* Ensure container takes full width */
+                /* Adjust as per your layout */
+                height: 1180px;
+                /* Let height adjust based on aspect ratio */
+                overflow: hidden;
+                /* Ensure image doesn't overflow container */
+                position: relative;
+                /* Needed for absolute positioning of image */
+            }
+
+            #image {
+                width: 100%;
+                /* Take full width of container */
+                height: 100%;
+                /* Take full height of container */
+                object-fit: fill;
+            }
+
+            .footer2 #divs {
+                position: relative;
+                margin-top: -1100px;
+                border: 0px solid red;
+            }
+
+            #divs {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #divs .div1 {
+                margin-top: -60px;
+                margin-left: 40px;
+            }
+
+            #divs .div2 {
+                margin-top: -70px;
+                margin-left: 40px;
+            }
+
+            #divs .div2 .icon {
+                margin-top: 10px;
+            }
+
+            #divs .div3 {
+                margin-top: -20px;
+                margin-left: 40px;
+            }
+
+            #divs .div4 {
+                margin-top: 30px;
+                margin-left: 40px;
+            }
+
+            .bottom-footer {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #bottom-footer p {
+                margin-left: 0px;
+                margin-top: -30px;
+                text-align: center;
+                border: px solid violet;
+            }
+
+            #bottom-footer .anker {
+                display: flex;
+                margin-left: 50px;
+                margin-top: 50px;
+            }
+
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        /*our team*/
+
+        /*scrolling appear */
+        .our-team {
+            opacity: 0;
+            padding-top: 0px;
+            transform: translateY(300px);
+            transition: opacity 3s, transform 0.9s;
+        }
+
+        .our-team.show {
+            opacity: 1;
+            transform: translateY(0);
+            transform: 5s;
+        }
+
+        /*inside details left side of our team*/
+
+        .our-team {
+            width: 100%;
+            height: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #7F8487;
+        }
+
+        .our-team button {
+            cursor: pointer;
+        }
+
+        .team-detail {
+            width: 38%;
+            padding-top: 200px;
+            margin-left: 40px;
+        }
+
+        .team-detail .team-btn {
+            width: max-content;
+            height: max-content;
+            padding: 7px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .team-detail h1 {
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+
+        .team-detail p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .team-detail .read-btn {
+            width: max-content;
+            height: max-content;
+            padding: 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            background-color: blue;
+            border: 0px;
+            color: white;
+            -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+        }
+
+        .team-right-side {
+            height: 700px;
+            width: 50%;
+            position: absolute;
+            left: 600px;
+            top: 70px;
+        }
+
+        .our-team .team-right-side .card {
+            width: 350px;
+            height: 400px;
+            border: 1px solid #fdf8f8;
+            border-radius: 20px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: aliceblue;
+            -webkit-animation-duration: .5s;
+            animation-duration: 1s;
+        }
+
+        .our-team .team-right-side .card:hover {
+            border: 2px solid blue;
+            transition: .5s;
+        }
+
+        .team-right-side {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Two columns */
+            gap: 20px;
+        }
+
+        .team-right-side .card img {
+            height: 200px;
+            width: 200px;
+            margin-left: 75px;
+            background-position: center;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+        .team-right-side .card h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .team-right-side .card p {
+            text-align: center;
+        }
+
+        .team-right-side .card .icon {
+            margin-left: 80px;
+            margin-top: 25px;
+        }
+
+        .team-right-side .card .icon i {
+            height: 40px;
+            width: 40px;
+            background-color: rgb(25, 0, 255);
+            text-align: center;
+            border-radius: 50%;
+            line-height: 40px;
+            color: white;
+            margin-left: 4px;
+        }
+
+        .team-right-side .card .icon i:hover {
+            background-color: white;
+            color: rgb(0, 0, 0);
+            transition: 1s;
+            border: .5px solid black;
+        }
+
+        .team-right-side .card:hover {
+            cursor: pointer;
+            animation-name: bounce;
+            -moz-animation-name: bounce;
+        }
+
+        /*footer*/
+
+        .footer2 .divs {
+            position: relative;
+            display: flex;
+            margin-top: -550px;
+            border: 0px solid red;
+            z-index: 2;
+        }
+
+
+        .footer2 .div1 {
+            border: 0px solid white;
+            width: 300px;
+            height: 300px;
+            color: white;
+            margin-top: 100px;
+            margin-left: 40px;
+        }
+
+        .footer2 h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+
+        }
+
+        .footer2 p {
+            font-size: 18px;
+            color: rgb(182, 180, 180);
+        }
+
+        .footer2 .div2 {
+            border: 0px solid white;
+            width: 290px;
+            height: 250px;
+            color: rgb(182, 180, 180);
+            margin-top: 105px;
+            margin-left: 50px;
+
+        }
+
+        .footer2 .div2 h2 {
+            margin-bottom: 28px;
+            color: white;
+        }
+
+        .footer2 .div2 i {
+            margin-bottom: 20px;
+            margin-right: 12px;
+            color: rgb(182, 180, 180);
+        }
+
+        .footer2 .div2 .icon {
+            margin-top: 40px;
+        }
+
+        .footer2 .div2 .icon i {
+            margin-left: 2px;
+            height: 40px;
+            width: 40px;
+            background-color: aqua;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid grey;
+            color: rgb(182, 180, 180);
+        }
+
+        .footer2 .div2 .icon i:hover {
+            color: white;
+            transition: 1s;
+        }
+
+        .footer2 .div3 {
+            margin-top: 105px;
+            margin-left: 100px;
+            color: rgb(182, 180, 180);
+        }
+
+        .footer2 .div3 i:hover {
+            color: white;
+            transition: .2s;
+        }
+
+        .footer2 .div3 h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer2 .div3 i {
+            margin-top: 20px;
+            margin-right: 10px;
+            color: rgb(182, 180, 180);
+        }
+
+        .footer2 .div4 {
+            color: white;
+            height: 250px;
+            width: 250px;
+            border: 0px solid red;
+            margin-top: 105px;
+            margin-left: 0px;
+        }
+
+
+        .footer2 .div4 {
+            margin-top: 105px;
+            margin-left: 100px;
+            color: rgb(182, 180, 180);
+        }
+
+        .footer2 .div4 h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer2 .div4 i {
+            margin-top: 20px;
+            margin-right: 10px;
+            color: rgb(182, 180, 180);
+        }
+
+        .bottom-footer {
+            display: flex;
+            color: grey;
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            position: absolute;
+            margin-top: 100px;
+        }
+
+        .bottom-footer p {
+            margin-left: 35px;
+        }
+
+        .bottom-footer a {
+            color: grey;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .bottom-footer .anker {
+            margin-left: 450px;
+        }
+
+        .bottom-footer a:hover {
+            color: white;
+            transition: .5s;
+        }
+
+        .bottom-footer span {
+            text-decoration: underline;
+        }
+
+        .footer2 {
+            opacity: 0;
+            padding-top: 0px;
+            transform: translateY(300px);
+            transition: opacity 3s;
+        }
+
+        .footer2.show {
+            opacity: 1;
+            transform: translateY(0);
+            transform: 5s;
+        }
+
+        .container1 {
+            width: 100%;
+            /* Ensure container takes full width */
+            /* Adjust as per your layout */
+            height: 600px;
+            /* Let height adjust based on aspect ratio */
+            overflow: hidden;
+            /* Ensure image doesn't overflow container */
+            position: relative;
+            /* Needed for absolute positioning of image */
+        }
+
+        .image {
+            width: 180%;
+            /* Take full width of container */
+            height: 100%;
+            /* Take full height of container */
+            object-fit: fill;
+        }
+    </style>
+
+    <header>
+        <div id="brand"><a href="/">AI.TECH</a></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--  <li id="login"><a href="/logi
+                  <li><a href="/about">About</a></li>n" >Login</a></li>
+      <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./page.html">Pages</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <!--   <li id="login"><a href="/login" >Login</a></li>
+      <li id="signup"><a href="/signup">Signup</a></li>-->
+            </ul>
+        </div>
+    </header>
+    <!--our team section-->
+    <div class="our-team" id="our-team">
+        <div class="team-detail">
+            <button class="team-btn">Our Team</button>
+            <h1>Meet Our Experienced Team Members</h1>
+            <p> AI Specialist adept at ML, NLP, and CV. Drives innovation, problem-solving, and strategic AI
+                implementation. Strong collaborator and analytical thinker.</p>
+            <button class="read-btn">Read More</button>
+        </div>
+        <div class="team-right-side">
+            <div class="card">
+                <img src="https://media.gettyimages.com/id/1198044349/photo/smiling-mature-male-ceo-with-arms-crossed.jpg?s=612x612&w=0&k=20&c=hJ1WVNJxdMImxYpKoRyUvTltP7U4974GgsVOloI8xZ4="
+                    alt="img1">
+                <h2>Boris Johnson</h2>
+                <p>Founder & CEO</p>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1210318875/photo/portrait-of-mature-businessman-at-modern-office.jpg?s=612x612&w=0&k=20&c=iT6I5-1WIzRwQ4ioaUQ9ErOm7siE9nD0pbVC6kq0M_g="
+                    alt="img2">
+                <h2>Kate Winslet</h2>
+                <p>Co Founder</p>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1182092901/photo/confident-and-successful-young-adult-indian-businesswoman-in-white-suit-crossed-arms-on-chest.jpg?s=612x612&w=0&k=20&c=46UGMPGipOuPXxG515E_AA5vk1cJvc6IvnChZ94zL0k="
+                    alt="img3">
+                <h2>Cody Gardner</h2>
+                <p>Executive Manager</p>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1934527441/photo/portrait-of-mid-aged-businessman-standing-at-the-office.jpg?s=612x612&w=0&k=20&c=u3D7JaRHsEQjC_f1F27j39YgzRcxTwszGklMd3Vwb34="
+                    alt="img4">
+                <h2>Adam Crew</h2>
+                <p>Project Manager</p>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--contact-->
+    <div class="footer2">
+        <div class="container1" id="container1">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29ybGR8ZW58MHx8MHx8fDA%3D"
+                id="image" class="image" alt="imag1">
+        </div>
+
+        <div class="divs" id="divs">
+            <div class="div1">
+                <h1>AI.Tech</h1>
+                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et
+                    eos
+                    labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo
+                    et
+                    tempor</p>
+            </div>
+            <div class="div2">
+                <h2>Get in Touch</h2>
+                <i class="fa-solid fa-location-dot"></i>123 Street, New York, USA <br>
+                <i class="fa-solid fa-phone"></i>+012 345 67890 <br>
+                <i class="fa-solid fa-envelope"></i>info@example.com <br>
+                <div class="icon">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="div3">
+                <h2>Popular Link</h2>
+                <i class="fa-solid fa-greater-than"></i> About Us <br>
+                <i class="fa-solid fa-greater-than"></i> Contact Us <br>
+                <i class="fa-solid fa-greater-than"></i> Privacy Policy <br>
+                <i class="fa-solid fa-greater-than"></i> Terms & Condition <br>
+                <i class="fa-solid fa-greater-than"></i> Career<br>
+            </div>
+            <div class="div4">
+                <h2>Our Services</h2>
+                <i class="fa-solid fa-greater-than"></i> Robotic Automation <br>
+                <i class="fa-solid fa-greater-than"></i> Machiene Learning<br>
+                <i class="fa-solid fa-greater-than"></i> Predective Analysis <br>
+                <i class="fa-solid fa-greater-than"></i> Data Science <br>
+                <i class="fa-solid fa-greater-than"></i> Robot Technology <br>
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-footer" id="bottom-footer">
+        <p>© <span>Your Site Name</span>, All Right Reserved. Designed By <span>Sanjai</span> Distributed By
+            ThemeWagon</p>
+        <div class="anker">
+            <a href="#Home">Home</a>
+            <a href="#">Cookies</a>
+            <a href="#">Help</a>
+            <a href="#">FAQs</a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var animationSection = document.querySelector('.our-team');
+            var sectionPosition = animationSection.getBoundingClientRect().top;
+            var screenPosition = window.innerHeight;
+            if (sectionPosition < screenPosition) {
+                animationSection.classList.add('show');
+            }
+        });
+
+        window.addEventListener('scroll', function () {
+            var animationSection = document.querySelector('.footer2');
+            var sectionPosition = animationSection.getBoundingClientRect().top;
+            var screenPosition = window.innerHeight;
+            if (sectionPosition < screenPosition) {
+                animationSection.classList.add('show');
+            }
+        });
+
+          //navbar for moblie and lap navgition bar
+  function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+    </script>
+</body>
+
+</html>
